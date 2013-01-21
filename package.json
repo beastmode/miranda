@@ -1,0 +1,29 @@
+{
+  "name": "miranda",
+  "version": "0.0.1",
+  "description": "simple permissions module for managing access to resources",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/beastmode/miranda.git"
+  },
+  "keywords": [
+    "permissions",
+    "access",
+    "simple",
+    "miranda-rights",
+    "miranda rights"
+  ],
+  "author": "beastmode",
+  "license": "BSD",
+  "dependencies" : {
+    "ninjazord" : "git+ssh://git@github.com:brendanobrienesq/ninjazord.git"
+  },
+  "devDependencies": {
+      "mocha": "1.6.0",
+      "should" : "1.2.1"
+    }
+}
