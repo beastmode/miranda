@@ -49,7 +49,7 @@ describe('Miranda Test', function(){
 				['5','testResource', { create : true, read: true, update : true, delete: true}]
 			],function(){
 				done();
-			})
+			});
 		});
 	});
 
@@ -60,7 +60,7 @@ describe('Miranda Test', function(){
 				permissions.create.should.equal(true);
 				permissions.update.should.equal(false);
 				done();
-			})
+			});
 		});
 		it('should let user 1 create testResource', function(done){
 			Miranda.get('1','testResource', 'create', function(permission){
@@ -77,6 +77,19 @@ describe('Miranda Test', function(){
 		it('should let the admin do... anything.', function(done){
 			Miranda.get('admin','SUPERHIDDENRESOURCE','*', function(permission){
 				permission.should.equal(true);
+				done();
+			});
+		});
+		it('should support getting an object of permissions objects', function (done){
+			Miranda.get('1',{
+				testResource : 'testResource',
+				testResourceOne : 'testResource.1',
+				hidden : 'SUPERHIDDENRESOURCE'
+			}, function(permissions){
+				permissions.should.be.a('object');
+				permissions.testResource.should.be.a('object');
+				permissions.testResourceOne.should.be.a('object');
+				permissions.hidden.should.be.a('object');
 				done();
 			});
 		});
