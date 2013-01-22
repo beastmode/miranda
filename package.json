@@ -1,6 +1,6 @@
 {
   "name": "miranda",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "simple permissions module for managing access to resources",
   "main": "index.js",
   "scripts": {

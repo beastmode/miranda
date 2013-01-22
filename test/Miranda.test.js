@@ -42,9 +42,26 @@ describe('Miranda Test', function(){
 				done();
 			});
 		});
+		it('should accept an array of arguments',function(done){
+			Miranda.set([
+				['3','testResource', { create : true, read: true, update : true, delete: true}],
+				['4','testResource', { create : true, read: true, update : true, delete: true}],
+				['5','testResource', { create : true, read: true, update : true, delete: true}]
+			],function(){
+				done();
+			})
+		});
 	});
 
 	describe('get', function(){
+		it('should return a list of permissions when no action is provided',function(done){
+			Miranda.get('1','testResource',function(permissions){
+				permissions.should.be.a('object');
+				permissions.create.should.equal(true);
+				permissions.update.should.equal(false);
+				done();
+			})
+		});
 		it('should let user 1 create testResource', function(done){
 			Miranda.get('1','testResource', 'create', function(permission){
 				permission.should.equal(true);
