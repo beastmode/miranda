@@ -1,5 +1,5 @@
 var should = require('should')
-	, db = require('ninjazord')
+	, db = require('ninjazord')()
 	, Miranda = require('../lib/Miranda');
 
 describe('Miranda Test', function(){

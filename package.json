@@ -1,6 +1,6 @@
 {
   "name": "miranda",
-  "version": "0.0.21",
+  "version": "0.0.3",
   "description": "simple permissions module for managing access to resources",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "author": "beastmode",
   "license": "BSD",
   "dependencies" : {
-    "ninjazord" : "git+ssh://git@github.com:brendanobrienesq/ninjazord.git"
+    "ninjazord" : "0.1.0"
   },
   "devDependencies": {
       "mocha": "1.6.0",
